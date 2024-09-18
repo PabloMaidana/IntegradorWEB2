@@ -1,0 +1,37 @@
+<html lang="es"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Arte del Museo Metropolitano</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <div id="Encabezado">
+        <h1>Museo Metropolitano NY</h1>
+        <label for="department">Departamento:</label>
+        <select id="department">
+            <option value="">Cargando departamentos...</option> 
+        </select>
+        
+        <label for="keyword">Palabra clave:</label>
+        <input type="text" id="keyword">
+        
+        <label for="location">Localización:</label>
+        <select id="location">
+            <option value="">Selecciona una localización</option>
+            <option value="Europe">Europa</option>
+            <option value="Belgium">Belgica</option>
+            <option value="Paris">París</option>
+            <option value="Asia">Asia</option>
+            <option value="Egypt">Egipto</option>
+            <option value="Italy">Italia</option>
+        </select>
+        
+        <button onclick="fetchObjetos()">Buscar</button>  
+    </div>
+
+    
+</body>
+</html>
