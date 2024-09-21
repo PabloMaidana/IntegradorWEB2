@@ -1,3 +1,13 @@
+const express = require('express');
+const axios = require('axios');
+const translate = require('node-google-translate-skidz');
+const app = express();
+
+const baseUrl = 'https://collectionapi.metmuseum.org/public/collection/v1';
+
+app.use(express.static('public'));
+app.use(express.json());
+
 app.post('/api/artworks', async (req, res) => {
     try {
         const { departmentId, keyword, location, page = 1 } = req.body;
