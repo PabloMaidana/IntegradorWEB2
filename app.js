@@ -83,3 +83,15 @@ app.post('/api/artworks', async (req, res) => {
         res.status(500).json({ error: 'Error al hacer fetch de los datos de la API.' });
     }
 });
+
+// Endpoint para recuperar los departamentos en la API
+app.get('/api/departments', async (req, res) => {
+    try {
+        const response = await axios.get(`${baseUrl}/departments`);
+        const departments = response.data.departments;
+        res.json(departments);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al hacer fetch de los departamentos' });
+    }
+});

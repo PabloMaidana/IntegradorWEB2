@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('imagenes/museo1.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajustar el contenedor de la grilla */
+#artworkGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+    padding: 20px;
+}
+
+#Encabezado {
+    padding-left:20;
+    color: white;
+    margin-top: 10;
+}
+
+
+/* Estilos para las tarjetas (cards) */
+.art-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+    font-size: 0.9em; 
+}
+
+/* Ajustar el tamaño de las imágenes dentro de las tarjetas */
+.art-card img {
+    width: 100%; 
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+/* Cambiar el tamaño del título y el texto */
+.art-card h3 {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.art-card p {
+    font-size: 0.9em; /* Reducir el tamaño de la fuente en los párrafos */
+    margin: 2px 0;
+}
