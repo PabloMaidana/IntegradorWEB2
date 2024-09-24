@@ -1,6 +1,20 @@
 let paginaActual = 1;
 let totalObjects = 0;
 
+const mensajeCargando = document.getElementById('mensaje-Cargando');
+const artworkGrid = document.getElementById('artworkGrid');
+
+// Función para mostrar el mensaje de carga
+function mostrarCargando() {
+    mensajeCargando.style.display = 'block'; 
+    artworkGrid.innerHTML = ''; 
+}
+
+// Función para ocultar el mensaje de carga
+function ocultarCargando() {
+    mensajeCargando.style.display = 'none'; 
+}
+
 async function fetchObjetos(page = 1) {
     const department = document.getElementById('department').value;
     const keyword = document.getElementById('keyword').value;
@@ -80,3 +94,40 @@ function mostrarArtworks(objects) {
         grid.appendChild(card);
     });
 }
+
+// Función para mostrar imágenes adicionales en una nueva ventana
+function mostrarImagenesAdicionales(images) {
+    const nuevaVentana = window.open('', '_blank');
+    nuevaVentana.document.write('<h1>Imágenes Adicionales</h1>');
+
+    nuevaVentana.document.write(`
+        <style>
+            body { display: flex; flex-direction: column; align-items: center; }
+            img { max-width: 50%; margin-bottom: 10px; }
+        </style>
+    `);
+
+    images.forEach((imgUrl) => {
+         // Cambiar a primaryImageSmall
+         const smallImageUrl = imgUrl.replace(/\/\d+$/, "/primaryImageSmall"); // Reemplaza el último segmento de la URL
+         nuevaVentana.document.write(`<img src="${smallImageUrl}" alt="Imagen Adicional">`);
+    });
+}
+
+function actualizarPaginacion() {
+    const paginacion = document.getElementById('paginacion');
+    paginacion.innerHTML = ''; // Limpiar la paginación
+    const totalPaginas = Math.ceil(totalObjects / 20); // Calcular el total de páginas
+
+    for (let i = 1; i <= totalPaginas; i++) {
+        const pageButton = document.createElement('button');
+        pageButton.textContent = i;
+        pageButton.onclick = () => fetchObjetos(i); // Llamar a fetchObjetos con la nueva página
+        if (i === paginaActual) {
+            pageButton.disabled = true; // Desactivar el botón de la página actual
+        }
+        paginacion.appendChild(pageButton);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', cargarDepartments);
