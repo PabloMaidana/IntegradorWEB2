@@ -95,3 +95,23 @@ app.get('/api/departments', async (req, res) => {
         res.status(500).json({ error: 'Error al hacer fetch de los departamentos' });
     }
 });
+
+// Función para traducir texto
+const translateText = async (text, lang) => {
+    if (!text) return '';
+    try {
+        const translated = await translate({
+            text: text,
+            source: 'en',
+            target: lang
+        });
+        return translated.translation;
+    } catch (err) {
+        console.error('Error de traduccion:', err);
+        return text;
+    }
+};
+
+app.listen(3000, () => {
+    console.log('Servidor ejecutandose en el puerto 3000');
+});

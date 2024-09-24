@@ -55,3 +55,16 @@ body {
     font-size: 0.9em; /* Reducir el tamaño de la fuente en los párrafos */
     margin: 2px 0;
 }
+
+.paginacion {
+    margin-top: 20px;
+    margin-bottom: 20;
+    margin-left: 20;
+    text-align: center;
+}
+
+.paginacion button{
+   width: 40px;
+   height: 40px;
+   margin: 5px;
+}
