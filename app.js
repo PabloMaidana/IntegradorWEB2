@@ -8,7 +8,6 @@ const baseUrl = 'https://collectionapi.metmuseum.org/public/collection/v1';
 app.use(express.static('public'));
 app.use(express.json());
 
-// Endpoint para recuperar objetos con filtros
 app.post('/api/artworks', async (req, res) => {
     try {
         const { departmentId, keyword, location, page = 1 } = req.body;
@@ -113,6 +112,6 @@ const translateText = async (text, lang) => {
     }
 };
 
-app.listen(3000, () => {
-    console.log('Servidor ejecutandose en el puerto 3000');
+app.listen(3001, () => {
+    console.log('Servidor ejecutandose en el puerto 3001');
 });

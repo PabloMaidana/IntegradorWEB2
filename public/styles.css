@@ -9,19 +9,6 @@ body {
     padding: 0;
 }
 
-.paginacion {
-    margin-top: 20px;
-    margin-bottom: 20;
-    margin-left: 20;
-    text-align: center;
-}
-
-.paginacion button{
-   width: 40px;
-   height: 40px;
-   margin: 5px;
-}
-
 /* Ajustar el contenedor de la grilla */
 #artworkGrid {
     display: grid;
@@ -65,6 +52,19 @@ body {
 }
 
 .art-card p {
-    font-size: 0.9em; /* Reducir el tamaño de la fuente en los párrafos */
+    font-size: 0.9em; 
     margin: 2px 0;
+}
+
+.paginacion {
+    margin-top: 20px;
+    margin-bottom: 20;
+    margin-left: 20;
+    text-align: center;
+}
+
+.paginacion button{
+   width: 40px;
+   height: 40px;
+   margin: 5px;
 }

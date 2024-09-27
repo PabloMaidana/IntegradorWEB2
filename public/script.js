@@ -38,7 +38,7 @@ async function fetchObjetos(page = 1) {
         mostrarError('Hubo un error al cargar los resultados.');
     } finally {
         ocultarCargando(); // Ocultar el mensaje de carga al terminar la carga
-    }
+    }  
 }
 
 async function cargarDepartments() {
@@ -59,7 +59,7 @@ async function cargarDepartments() {
     } catch (error) {
         console.error('Error al cargar los departamentos:', error);
     }
-}
+}       
 
 function mostrarArtworks(objects) {
     const grid = document.getElementById('artworkGrid');
